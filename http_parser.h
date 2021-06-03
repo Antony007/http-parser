@@ -92,7 +92,7 @@ typedef int (*http_cb) (http_parser*);
 
 
 /* Status Codes */
-#define HTTP_STATUS_MAP(XX)                                                 \
+#define HTTP_STATUS_MAP_OBSOLETE(XX)                                                 \
   XX(100, CONTINUE,                        Continue)                        \
   XX(101, SWITCHING_PROTOCOLS,             Switching Protocols)             \
   XX(102, PROCESSING,                      Processing)                      \
@@ -156,7 +156,7 @@ typedef int (*http_cb) (http_parser*);
 enum http_status
   {
 #define XX(num, name, string) HTTP_STATUS_##name = num,
-  HTTP_STATUS_MAP(XX)
+  HTTP_STATUS_MAP_OBSOLETE(XX)
 #undef XX
   };
 
